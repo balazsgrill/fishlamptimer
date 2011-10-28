@@ -23,23 +23,7 @@ refresh(){
 	if (rcvcounter){
 		// data is received
 		
-		if (rcvmsg_started){
-			if (rcvcount > 0){
-				//data byte
-				message_addData(rcvmessage, rcv);
-				rcvcount = rcvcount - 1;
-			}else{
-				//checksum
-				rcvmessage.checksum = rcv;
-				//last byte of message
-				rcvmsg_started = 0;
-			}
-		}else{
-			//first byte
-			rcvmessage.msgID = rcv / 16;
-			rcvcount = rcv % 16;
-			rcvmsg_started = 1;  
-		}
+		
 		
 	}
 }

@@ -19,5 +19,5 @@ messageReceived(TMessage msg){
 }
 
 refresh(){
-	//ProtocolHandler.refresh();
+	ProtocolHandler.refresh();
 }
