@@ -1,7 +1,7 @@
 main(){
  init(){
   init(){
-   set_u8( dest = uint8@0, v = 0){
+   set_u8( v = 0, dest = uint8@0){
     aCLRF( f = 0){
      assistSelectBank( f = 0){
       }
@@ -12,24 +12,24 @@ main(){
     }
    init(){
     RS232_init(){
-     aBSF( b = 5, f = 3987){
+     aBSF( f = 3987, b = 5){
       assistSelectBank( f = 3987){
        }
-      BSF( a = {}0, b = 5, f = 3987){
+      BSF( a = {}0, f = 3987, b = 5){
        1: 1000101010010011
        }
       }
-     aBSF( b = 7, f = 3987){
+     aBSF( f = 3987, b = 7){
       assistSelectBank( f = 3987){
        }
-      BSF( a = {}0, b = 7, f = 3987){
+      BSF( a = {}0, f = 3987, b = 7){
        2: 1000111010010011
        }
       }
-     aBSF( b = 2, f = 4012){
+     aBSF( f = 4012, b = 2){
       assistSelectBank( f = 4012){
        }
-      BSF( a = {}0, b = 2, f = 4012){
+      BSF( a = {}0, f = 4012, b = 2){
        3: 1000010010101100
        }
       }
@@ -39,7 +39,7 @@ main(){
      aMOVWF( f = 4015){
       assistSelectBank( f = 4015){
        }
-      MOVWF( f = 4015, a = {}0){
+      MOVWF( a = {}0, f = 4015){
        5: 110111010101111
        }
       }
@@ -50,17 +50,17 @@ main(){
        6: 110101010110000
        }
       }
-     aBSF( b = 5, f = 4012){
+     aBSF( f = 4012, b = 5){
       assistSelectBank( f = 4012){
        }
-      BSF( a = {}0, b = 5, f = 4012){
+      BSF( a = {}0, f = 4012, b = 5){
        7: 1000101010101100
        }
       }
-     aBSF( b = 4, f = 4011){
+     aBSF( f = 4011, b = 4){
       assistSelectBank( f = 4011){
        }
-      BSF( a = {}0, b = 4, f = 4011){
+      BSF( a = {}0, f = 4011, b = 4){
        8: 1000100010101011
        }
       }
@@ -71,15 +71,15 @@ main(){
        9: 1001100010101100
        }
       }
-     aBSF( b = 7, f = 4011){
+     aBSF( f = 4011, b = 7){
       assistSelectBank( f = 4011){
        }
-      BSF( a = {}0, b = 7, f = 4011){
+      BSF( a = {}0, f = 4011, b = 7){
        10: 1000111010101011
        }
       }
      }
-    set_u8( dest = uint8@1, v = 0){
+    set_u8( v = 0, dest = uint8@1){
      aCLRF( f = 1){
       assistSelectBank( f = 1){
        }
@@ -95,7 +95,7 @@ main(){
  run(){
   refresh(){
    refresh(){
-    set_u8( dest = uint8@3, v = 0){
+    set_u8( v = 0, dest = uint8@3){
      aCLRF( f = 3){
       assistSelectBank( f = 3){
        }
@@ -104,11 +104,11 @@ main(){
        }
       }
      }
-    RS232_rcv( rcv = uint8@2, counter = uint8@3){
-     aBTFSS( b = 5, f = 3998){
+    RS232_rcv( counter = uint8@3, rcv = uint8@2){
+     aBTFSS( f = 3998, b = 5){
       assistSelectBank( f = 3998){
        }
-      BTFSS( a = {}0, b = 5, f = 3998){
+      BTFSS( b = 5, a = {}0, f = 3998){
        13: 1010101010011110
        }
       }
@@ -120,31 +120,31 @@ main(){
       16: 1100111110101110
       17: 1111000000000010
       }
-     aINCF( f = 3, d = 1){
+     aINCF( d = 1, f = 3){
       assistSelectBank( f = 3){
        }
-      INCF( f = 3, a = {}0, d = 1){
+      INCF( d = 1, f = 3, a = {}0){
        18: 10101000000011
        }
       }
      label norcv
      }
-    branch_u8( true = hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol@8d7efa, condition = uint8@3, false = hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol@18b516b){
+    branch_u8( false = hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol@d7da1d, true = hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol@130b8d0, condition = uint8@3){
      aMOVF( f = 3, d = 1){
       assistSelectBank( f = 3){
        }
-      MOVF( d = 1, a = {}0, f = 3){
+      MOVF( a = {}0, f = 3, d = 1){
        19: 101001000000011
        }
       }
      BZ( n = 2){
       20: 1110000000000010
       }
-     GOTO( c = hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol@8d7efa){
+     GOTO( c = hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol@130b8d0){
       21: 1110111100011001
       22: 1111000000000000
       }
-     GOTO( c = hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol@18b516b){
+     GOTO( c = hu.e.compiler.internal.model.symbols.impl.CodeAddressSymbol@d7da1d){
       23: 1110111100011001
       24: 1111000000000000
       }
