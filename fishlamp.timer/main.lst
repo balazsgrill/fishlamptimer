@@ -14,17 +14,17 @@ main/main(){
       }
      }
     }
-    microchip.pic18.assisted/aBCF( f = 4082, b = 2){
+    microchip.pic18.assisted/aBCF( b = 2, f = 4082){
      microchip.pic18.assisted/assistSelectBank( f = 4082){
      }
-     microchip.pic18/BCF( a = {}0, b = 2, f = 4082){
+     microchip.pic18/BCF( f = 4082, b = 2, a = {}0){
       2: 1001010011110010
      }
     }
-    microchip.pic18.assisted/aBCF( f = 4082, b = 5){
+    microchip.pic18.assisted/aBCF( b = 5, f = 4082){
      microchip.pic18.assisted/assistSelectBank( f = 4082){
      }
-     microchip.pic18/BCF( a = {}0, b = 5, f = 4082){
+     microchip.pic18/BCF( f = 4082, b = 5, a = {}0){
       3: 1001101011110010
      }
     }
@@ -85,10 +85,10 @@ main/main(){
        11: 1000100010101011
       }
      }
-     microchip.pic18.assisted/aBCF( f = 4012, b = 4){
+     microchip.pic18.assisted/aBCF( b = 4, f = 4012){
       microchip.pic18.assisted/assistSelectBank( f = 4012){
       }
-      microchip.pic18/BCF( a = {}0, b = 4, f = 4012){
+      microchip.pic18/BCF( f = 4012, b = 4, a = {}0){
        12: 1001100010101100
       }
      }
@@ -139,7 +139,7 @@ main/main(){
      }
     }
     pic18f14k50.eusart/RS232_rcv( counter = uint8@3, rcv = uint8@2){
-     microchip.pic18.assisted/aBTFSS( b = 5, f = 3998){
+     microchip.pic18.assisted/aBTFSS( f = 3998, b = 5){
       microchip.pic18.assisted/assistSelectBank( f = 3998){
       }
       microchip.pic18/BTFSS( f = 3998, b = 5, a = {}0){
@@ -150,24 +150,24 @@ main/main(){
       18: 1110111100010111
       19: 1111000000000000
      }
-     microchip.pic18/MOVFF( d = 2, s = 4014){
+     microchip.pic18/MOVFF( s = 4014, d = 2){
       20: 1100111110101110
       21: 1111000000000010
      }
-     microchip.pic18.assisted/aINCF( f = 3, d = 1){
+     microchip.pic18.assisted/aINCF( d = 1, f = 3){
       microchip.pic18.assisted/assistSelectBank( f = 3){
       }
-      microchip.pic18/INCF( d = 1, a = {}0, f = 3){
+      microchip.pic18/INCF( f = 3, d = 1, a = {}0){
        22: 10101000000011
       }
      }
      label norcv
     }
-    e.platform.u8/branch_u8( condition = uint8@3, false = Code(48), true = Code(29)){
+    e.platform.u8/branch_u8( true = Code(29), false = Code(48), condition = uint8@3){
      microchip.pic18.assisted/aMOVF( f = 3, d = 1){
       microchip.pic18.assisted/assistSelectBank( f = 3){
       }
-      microchip.pic18/MOVF( d = 1, a = {}0, f = 3){
+      microchip.pic18/MOVF( a = {}0, d = 1, f = 3){
        23: 101001000000011
       }
      }
@@ -192,7 +192,7 @@ main/main(){
          microchip.pic18.assisted/aMOVF( f = 1, d = 0){
           microchip.pic18.assisted/assistSelectBank( f = 1){
           }
-          microchip.pic18/MOVF( d = 0, a = {}0, f = 1){
+          microchip.pic18/MOVF( a = {}0, d = 0, f = 1){
            29: 101000000000001
           }
          }
@@ -239,11 +239,11 @@ main/main(){
          }
          label end
         }
-        e.platform.u8/branch_u8( condition = uint8@4, false = Code(48), true = Code(46)){
+        e.platform.u8/branch_u8( true = Code(46), false = Code(48), condition = uint8@4){
          microchip.pic18.assisted/aMOVF( f = 4, d = 1){
           microchip.pic18.assisted/assistSelectBank( f = 4){
           }
-          microchip.pic18/MOVF( d = 1, a = {}0, f = 4){
+          microchip.pic18/MOVF( a = {}0, d = 1, f = 4){
            40: 101001000000100
           }
          }
@@ -261,7 +261,7 @@ main/main(){
         }
         label Code(46)
         e.platform.u8/set_u8( dest = uint8@1, v = uint8@2){
-         microchip.pic18/MOVFF( d = 2, s = 1){
+         microchip.pic18/MOVFF( s = 1, d = 2){
           46: 1100000000000001
           47: 1111000000000010
          }
@@ -276,21 +276,21 @@ main/main(){
   }
   RTE.SecondProvider/refresh(){
    SecondProvider/refresh(){
-    microchip.pic18.assisted/aBTFSS( b = 2, f = 4082){
+    microchip.pic18.assisted/aBTFSS( f = 4082, b = 2){
      microchip.pic18.assisted/assistSelectBank( f = 4082){
      }
      microchip.pic18/BTFSS( f = 4082, b = 2, a = {}0){
       48: 1010010011110010
      }
     }
-    microchip.pic18/GOTO( c = label(56)){
-     49: 1110111100111000
+    microchip.pic18/GOTO( c = label(60)){
+     49: 1110111100111100
      50: 1111000000000000
     }
-    microchip.pic18.assisted/aBCF( f = 4082, b = 2){
+    microchip.pic18.assisted/aBCF( b = 2, f = 4082){
      microchip.pic18.assisted/assistSelectBank( f = 4082){
      }
-     microchip.pic18/BCF( a = {}0, b = 2, f = 4082){
+     microchip.pic18/BCF( f = 4082, b = 2, a = {}0){
       51: 1001010011110010
      }
     }
@@ -322,19 +322,32 @@ main/main(){
      RTE/SecondProvider_secondElapsed(){
       RTE.Clock/secondElapsed(){
        Clock/secondElapsed(){
-        ERROR: Variable cannot be accessed here: hu.e.parser.eSyntax.impl.VariableImpl@182a29e (name: currentTime)
-        RTE.Types/Time_increment(){
-         ERROR:  Struct type needed!
-         ERROR:  Struct type needed!
+        RTE.Types/Time_increment( time = Time@2){
+         e.platform.u8/set_u8( dest = uint8@5, v = uint8@2){
+          microchip.pic18/MOVFF( s = 5, d = 2){
+           56: 1100000000000101
+           57: 1111000000000010
+          }
+         }
+         e.platform.u8/add_u8( v = 1, dest = uint8@5){
+          microchip.pic18/MOVLW( k = 1){
+           58: 111000000001
+          }
+          microchip.pic18.assisted/aADDWF( d = 1, f = 5){
+           microchip.pic18.assisted/assistSelectBank( f = 5){
+           }
+           microchip.pic18/ADDWF( f = 5, a = {}0, d = 1){
+            59: 10011000000101
+           }
+          }
+         }
+         ERROR: This is a runtime operation!
+         ERROR: Cannot found EQUALS operator!
         }
-        ERROR: Variable cannot be accessed here: hu.e.parser.eSyntax.impl.VariableImpl@182a29e (name: currentTime)
-        RTE.Clock/timeChanged(){
-         ERROR: Variable cannot be accessed here: hu.e.parser.eSyntax.impl.VariableImpl@3317f2 (name: time)
-         RTE/Clock_timeChanged(){
-          ERROR: Variable cannot be accessed here: hu.e.parser.eSyntax.impl.VariableImpl@1072807 (name: time)
-          RTE.Communicator/timeChanged(){
-           ERROR: Variable cannot be accessed here: hu.e.parser.eSyntax.impl.VariableImpl@1c183dc (name: time)
-           Communicator/timeChanged(){
+        RTE.Clock/timeChanged( time = Time@2){
+         RTE/Clock_timeChanged( time = Time@2){
+          RTE.Communicator/timeChanged( time = Time@2){
+           Communicator/timeChanged( time = Time@2){
             ERROR: Cannot found EQUALS operator!
            }
           }
@@ -349,7 +362,7 @@ main/main(){
   }
  }
  microchip.pic18/GOTO( c = label(16)){
-  56: 1110111100010000
-  57: 1111000000000000
+  60: 1110111100010000
+  61: 1111000000000000
  }
 }
