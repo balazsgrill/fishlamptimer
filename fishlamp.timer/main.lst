@@ -9,22 +9,22 @@ main/main(){
      microchip.pic18.assisted/aMOVWF( f = 4053){
       microchip.pic18.assisted/assistSelectBank( f = 4053){
       }
-      microchip.pic18/MOVWF( f = 4053, a = {}0){
+      microchip.pic18/MOVWF( a = {}0, f = 4053){
        1: 110111011010101
       }
      }
     }
-    microchip.pic18.assisted/aBCF( b = 2, f = 4082){
+    microchip.pic18.assisted/aBCF( f = 4082, b = 2){
      microchip.pic18.assisted/assistSelectBank( f = 4082){
      }
-     microchip.pic18/BCF( f = 4082, a = {}0, b = 2){
+     microchip.pic18/BCF( a = {}0, b = 2, f = 4082){
       2: 1001010011110010
      }
     }
-    microchip.pic18.assisted/aBCF( b = 5, f = 4082){
+    microchip.pic18.assisted/aBCF( f = 4082, b = 5){
      microchip.pic18.assisted/assistSelectBank( f = 4082){
      }
-     microchip.pic18/BCF( f = 4082, a = {}0, b = 5){
+     microchip.pic18/BCF( a = {}0, b = 5, f = 4082){
       3: 1001101011110010
      }
     }
@@ -33,24 +33,24 @@ main/main(){
   RTE.Communicator/init(){
    Communicator/init(){
     pic18f14k50.eusart/RS232_init(){
-     microchip.pic18.assisted/aBSF( b = 5, f = 3987){
+     microchip.pic18.assisted/aBSF( f = 3987, b = 5){
       microchip.pic18.assisted/assistSelectBank( f = 3987){
       }
-      microchip.pic18/BSF( b = 5, f = 3987, a = {}0){
+      microchip.pic18/BSF( a = {}0, b = 5, f = 3987){
        4: 1000101010010011
       }
      }
-     microchip.pic18.assisted/aBSF( b = 7, f = 3987){
+     microchip.pic18.assisted/aBSF( f = 3987, b = 7){
       microchip.pic18.assisted/assistSelectBank( f = 3987){
       }
-      microchip.pic18/BSF( b = 7, f = 3987, a = {}0){
+      microchip.pic18/BSF( a = {}0, b = 7, f = 3987){
        5: 1000111010010011
       }
      }
-     microchip.pic18.assisted/aBSF( b = 2, f = 4012){
+     microchip.pic18.assisted/aBSF( f = 4012, b = 2){
       microchip.pic18.assisted/assistSelectBank( f = 4012){
       }
-      microchip.pic18/BSF( b = 2, f = 4012, a = {}0){
+      microchip.pic18/BSF( a = {}0, b = 2, f = 4012){
        6: 1000010010101100
       }
      }
@@ -60,7 +60,7 @@ main/main(){
      microchip.pic18.assisted/aMOVWF( f = 4015){
       microchip.pic18.assisted/assistSelectBank( f = 4015){
       }
-      microchip.pic18/MOVWF( f = 4015, a = {}0){
+      microchip.pic18/MOVWF( a = {}0, f = 4015){
        8: 110111010101111
       }
      }
@@ -71,39 +71,35 @@ main/main(){
        9: 110101010110000
       }
      }
-     microchip.pic18.assisted/aBSF( b = 5, f = 4012){
+     microchip.pic18.assisted/aBSF( f = 4012, b = 5){
       microchip.pic18.assisted/assistSelectBank( f = 4012){
       }
-      microchip.pic18/BSF( b = 5, f = 4012, a = {}0){
+      microchip.pic18/BSF( a = {}0, b = 5, f = 4012){
        10: 1000101010101100
       }
      }
-     microchip.pic18.assisted/aBSF( b = 4, f = 4011){
+     microchip.pic18.assisted/aBSF( f = 4011, b = 4){
       microchip.pic18.assisted/assistSelectBank( f = 4011){
       }
-      microchip.pic18/BSF( b = 4, f = 4011, a = {}0){
+      microchip.pic18/BSF( a = {}0, b = 4, f = 4011){
        11: 1000100010101011
       }
      }
-     microchip.pic18.assisted/aBCF( b = 4, f = 4012){
+     microchip.pic18.assisted/aBCF( f = 4012, b = 4){
       microchip.pic18.assisted/assistSelectBank( f = 4012){
       }
-      microchip.pic18/BCF( f = 4012, a = {}0, b = 4){
+      microchip.pic18/BCF( a = {}0, b = 4, f = 4012){
        12: 1001100010101100
       }
      }
-     microchip.pic18.assisted/aBSF( b = 7, f = 4011){
+     microchip.pic18.assisted/aBSF( f = 4011, b = 7){
       microchip.pic18.assisted/assistSelectBank( f = 4011){
       }
-      microchip.pic18/BSF( b = 7, f = 4011, a = {}0){
+      microchip.pic18/BSF( a = {}0, b = 7, f = 4011){
        13: 1000111010101011
       }
      }
     }
-   }
-  }
-  RTE.ProtocolHandler/init(){
-   ProtocolHandler/init(){
     e.platform.u8/set_u8( dest = uint8@0, v = 0){
      microchip.pic18.assisted/aCLRF( f = 0){
       microchip.pic18.assisted/assistSelectBank( f = 0){
@@ -115,195 +111,245 @@ main/main(){
     }
    }
   }
+  RTE.ProtocolHandler/init(){
+   ProtocolHandler/init(){
+    e.platform.u8/set_u8( dest = uint8@1, v = 0){
+     microchip.pic18.assisted/aCLRF( f = 1){
+      microchip.pic18.assisted/assistSelectBank( f = 1){
+      }
+      microchip.pic18/CLRF( a = {}0, f = 1){
+       15: 110101000000001
+      }
+     }
+    }
+   }
+  }
  }
  label start
  RTE/run(){
   RTE.Communicator/refresh(){
    Communicator/refresh(){
-    e.platform.u8/set_u8( dest = uint8@2, v = 0){
-     microchip.pic18.assisted/aCLRF( f = 2){
-      microchip.pic18.assisted/assistSelectBank( f = 2){
+    e.platform.u8/set_u8( dest = uint8@3, v = 0){
+     microchip.pic18.assisted/aCLRF( f = 3){
+      microchip.pic18.assisted/assistSelectBank( f = 3){
       }
-      microchip.pic18/CLRF( a = {}0, f = 2){
-       15: 110101000000010
+      microchip.pic18/CLRF( a = {}0, f = 3){
+       16: 110101000000011
       }
      }
     }
-    pic18f14k50.eusart/RS232_rcv( rcv = uint8@1, counter = uint8@2){
-     microchip.pic18.assisted/aBTFSS( f = 3998, b = 5){
+    pic18f14k50.eusart/RS232_rcv( counter = uint8@3, rcv = uint8@2){
+     microchip.pic18.assisted/aBTFSS( b = 5, f = 3998){
       microchip.pic18.assisted/assistSelectBank( f = 3998){
       }
-      microchip.pic18/BTFSS( f = 3998, a = {}0, b = 5){
-       16: 1010101010011110
+      microchip.pic18/BTFSS( f = 3998, b = 5, a = {}0){
+       17: 1010101010011110
       }
      }
-     microchip.pic18/GOTO( c = label(22)){
-      17: 1110111100010110
-      18: 1111000000000000
+     microchip.pic18/GOTO( c = label(23)){
+      18: 1110111100010111
+      19: 1111000000000000
      }
-     microchip.pic18/MOVFF( s = 4014, d = 1){
-      19: 1100111110101110
-      20: 1111000000000001
+     microchip.pic18/MOVFF( d = 2, s = 4014){
+      20: 1100111110101110
+      21: 1111000000000010
      }
-     microchip.pic18.assisted/aINCF( d = 1, f = 2){
-      microchip.pic18.assisted/assistSelectBank( f = 2){
+     microchip.pic18.assisted/aINCF( f = 3, d = 1){
+      microchip.pic18.assisted/assistSelectBank( f = 3){
       }
-      microchip.pic18/INCF( a = {}0, f = 2, d = 1){
-       21: 10101000000010
+      microchip.pic18/INCF( d = 1, a = {}0, f = 3){
+       22: 10101000000011
       }
      }
      label norcv
     }
-    e.platform.u8/branch_u8( condition = uint8@2, false = Code(43), true = Code(28)){
-     microchip.pic18.assisted/aMOVF( d = 1, f = 2){
-      microchip.pic18.assisted/assistSelectBank( f = 2){
+    e.platform.u8/branch_u8( condition = uint8@3, false = Code(48), true = Code(29)){
+     microchip.pic18.assisted/aMOVF( f = 3, d = 1){
+      microchip.pic18.assisted/assistSelectBank( f = 3){
       }
-      microchip.pic18/MOVF( d = 1, a = {}0, f = 2){
-       22: 101001000000010
+      microchip.pic18/MOVF( d = 1, a = {}0, f = 3){
+       23: 101001000000011
       }
      }
      microchip.pic18/BZ( n = 2){
-      23: 1110000000000010
+      24: 1110000000000010
      }
-     microchip.pic18/GOTO( c = Code(28)){
-      24: 1110111100011100
-      25: 1111000000000000
+     microchip.pic18/GOTO( c = Code(29)){
+      25: 1110111100011101
+      26: 1111000000000000
      }
-     microchip.pic18/GOTO( c = Code(43)){
-      26: 1110111100101011
-      27: 1111000000000000
+     microchip.pic18/GOTO( c = Code(48)){
+      27: 1110111100110000
+      28: 1111000000000000
      }
     }
-    label Code(28)
-    RTE.Communicator/dataReceived( d = uint8@1){
-     RTE/Communicator_dataReceived( rcv = uint8@1){
-      RTE.ProtocolHandler/dataReceived( rcv = uint8@1){
-       ProtocolHandler/dataReceived( rcv = uint8@1){
-        e.platform.u8/isequal_u8( d2 = 0, dest = uint8@3, d1 = uint8@0){
-         e.platform.u8/set_u8( dest = uint8@3, v = 1){
+    label Code(29)
+    RTE.Communicator/dataReceived( d = uint8@2){
+     RTE/Communicator_dataReceived( rcv = uint8@2){
+      RTE.ProtocolHandler/dataReceived( rcv = uint8@2){
+       ProtocolHandler/dataReceived( rcv = uint8@2){
+        e.platform.u8/isequal_u8( d = uint8@1, dest = uint8@4){
+         microchip.pic18.assisted/aMOVF( f = 1, d = 0){
+          microchip.pic18.assisted/assistSelectBank( f = 1){
+          }
+          microchip.pic18/MOVF( d = 0, a = {}0, f = 1){
+           29: 101000000000001
+          }
+         }
+         microchip.pic18.assisted/aCPFSEQ( f = 4){
+          microchip.pic18.assisted/assistSelectBank( f = 4){
+          }
+          microchip.pic18/CPFSEQ( a = {}0, f = 4){
+           30: 110001000000100
+          }
+         }
+         microchip.pic18/GOTO( c = label(37)){
+          31: 1110111100100101
+          32: 1111000000000000
+         }
+         e.platform.u8/set_u8( dest = uint8@4, v = 1){
           microchip.pic18/MOVLW( k = 1){
-           28: 111000000001
+           33: 111000000001
           }
-          microchip.pic18.assisted/aMOVWF( f = 3){
-           microchip.pic18.assisted/assistSelectBank( f = 3){
+          microchip.pic18.assisted/aMOVWF( f = 4){
+           microchip.pic18.assisted/assistSelectBank( f = 4){
            }
-           microchip.pic18/MOVWF( f = 3, a = {}0){
-            29: 110111000000011
+           microchip.pic18/MOVWF( a = {}0, f = 4){
+            34: 110111000000100
            }
           }
          }
-         microchip.pic18/MOVLW( k = 0){
-          30: 111000000000
-         }
-         microchip.pic18.assisted/aCPFSEQ( f = 0){
-          microchip.pic18.assisted/assistSelectBank( f = 0){
-          }
-          microchip.pic18/CPFSEQ( f = 0, a = {}0){
-           31: 110001000000000
-          }
-         }
-         microchip.pic18/GOTO( c = label(35)){
-          32: 1110111100100011
-          33: 1111000000000000
-         }
-         e.platform.u8/set_u8( dest = uint8@3, v = 0){
-          microchip.pic18.assisted/aCLRF( f = 3){
-           microchip.pic18.assisted/assistSelectBank( f = 3){
-           }
-           microchip.pic18/CLRF( a = {}0, f = 3){
-            34: 110101000000011
-           }
-          }
+         microchip.pic18/GOTO( c = label(40)){
+          35: 1110111100101000
+          36: 1111000000000000
          }
          label notequal
-        }
-        e.platform.u8/branch_u8( condition = uint8@3, false = Code(43), true = Code(41)){
-         microchip.pic18.assisted/aMOVF( d = 1, f = 3){
-          microchip.pic18.assisted/assistSelectBank( f = 3){
+         e.platform.u8/set_u8( dest = uint8@4, v = 0){
+          microchip.pic18.assisted/aCLRF( f = 4){
+           microchip.pic18.assisted/assistSelectBank( f = 4){
+           }
+           microchip.pic18/CLRF( a = {}0, f = 4){
+            37: 110101000000100
+           }
           }
-          microchip.pic18/MOVF( d = 1, a = {}0, f = 3){
-           35: 101001000000011
+         }
+         microchip.pic18/GOTO( c = label(40)){
+          38: 1110111100101000
+          39: 1111000000000000
+         }
+         label end
+        }
+        e.platform.u8/branch_u8( condition = uint8@4, false = Code(48), true = Code(46)){
+         microchip.pic18.assisted/aMOVF( f = 4, d = 1){
+          microchip.pic18.assisted/assistSelectBank( f = 4){
+          }
+          microchip.pic18/MOVF( d = 1, a = {}0, f = 4){
+           40: 101001000000100
           }
          }
          microchip.pic18/BZ( n = 2){
-          36: 1110000000000010
+          41: 1110000000000010
          }
-         microchip.pic18/GOTO( c = Code(41)){
-          37: 1110111100101001
-          38: 1111000000000000
+         microchip.pic18/GOTO( c = Code(46)){
+          42: 1110111100101110
+          43: 1111000000000000
          }
-         microchip.pic18/GOTO( c = Code(43)){
-          39: 1110111100101011
-          40: 1111000000000000
-         }
-        }
-        label Code(41)
-        e.platform.u8/set_u8( dest = uint8@0, v = uint8@1){
-         microchip.pic18/MOVFF( s = 0, d = 1){
-          41: 1100000000000000
-          42: 1111000000000001
+         microchip.pic18/GOTO( c = Code(48)){
+          44: 1110111100110000
+          45: 1111000000000000
          }
         }
-        label Code(43)
+        label Code(46)
+        e.platform.u8/set_u8( dest = uint8@1, v = uint8@2){
+         microchip.pic18/MOVFF( d = 2, s = 1){
+          46: 1100000000000001
+          47: 1111000000000010
+         }
+        }
+        label Code(48)
        }
       }
      }
     }
-    label Code(43)
+    label Code(48)
    }
   }
   RTE.SecondProvider/refresh(){
    SecondProvider/refresh(){
-    microchip.pic18.assisted/aBTFSS( f = 4082, b = 2){
+    microchip.pic18.assisted/aBTFSS( b = 2, f = 4082){
      microchip.pic18.assisted/assistSelectBank( f = 4082){
      }
-     microchip.pic18/BTFSS( f = 4082, a = {}0, b = 2){
-      43: 1010010011110010
+     microchip.pic18/BTFSS( f = 4082, b = 2, a = {}0){
+      48: 1010010011110010
      }
     }
-    microchip.pic18/GOTO( c = label(51)){
-     44: 1110111100110011
-     45: 1111000000000000
+    microchip.pic18/GOTO( c = label(56)){
+     49: 1110111100111000
+     50: 1111000000000000
     }
-    microchip.pic18.assisted/aBCF( b = 2, f = 4082){
+    microchip.pic18.assisted/aBCF( f = 4082, b = 2){
      microchip.pic18.assisted/assistSelectBank( f = 4082){
      }
-     microchip.pic18/BCF( f = 4082, a = {}0, b = 2){
-      46: 1001010011110010
+     microchip.pic18/BCF( a = {}0, b = 2, f = 4082){
+      51: 1001010011110010
      }
     }
     e.platform.u8/set_u8( dest = uint8@4055, v = 194){
      microchip.pic18/MOVLW( k = 194){
-      47: 111011000010
+      52: 111011000010
      }
      microchip.pic18.assisted/aMOVWF( f = 4055){
       microchip.pic18.assisted/assistSelectBank( f = 4055){
       }
-      microchip.pic18/MOVWF( f = 4055, a = {}0){
-       48: 110111011010111
+      microchip.pic18/MOVWF( a = {}0, f = 4055){
+       53: 110111011010111
       }
      }
     }
     e.platform.u8/set_u8( dest = uint8@4054, v = 246){
      microchip.pic18/MOVLW( k = 246){
-      49: 111011110110
+      54: 111011110110
      }
      microchip.pic18.assisted/aMOVWF( f = 4054){
       microchip.pic18.assisted/assistSelectBank( f = 4054){
       }
-      microchip.pic18/MOVWF( f = 4054, a = {}0){
-       50: 110111011010110
+      microchip.pic18/MOVWF( a = {}0, f = 4054){
+       55: 110111011010110
       }
      }
     }
     RTE.SecondProvider/secondElapsed(){
+     RTE/SecondProvider_secondElapsed(){
+      RTE.Clock/secondElapsed(){
+       Clock/secondElapsed(){
+        ERROR: Variable cannot be accessed here: hu.e.parser.eSyntax.impl.VariableImpl@182a29e (name: currentTime)
+        RTE.Types/Time_increment(){
+         ERROR:  Struct type needed!
+         ERROR:  Struct type needed!
+        }
+        ERROR: Variable cannot be accessed here: hu.e.parser.eSyntax.impl.VariableImpl@182a29e (name: currentTime)
+        RTE.Clock/timeChanged(){
+         ERROR: Variable cannot be accessed here: hu.e.parser.eSyntax.impl.VariableImpl@3317f2 (name: time)
+         RTE/Clock_timeChanged(){
+          ERROR: Variable cannot be accessed here: hu.e.parser.eSyntax.impl.VariableImpl@1072807 (name: time)
+          RTE.Communicator/timeChanged(){
+           ERROR: Variable cannot be accessed here: hu.e.parser.eSyntax.impl.VariableImpl@1c183dc (name: time)
+           Communicator/timeChanged(){
+            ERROR: Cannot found EQUALS operator!
+           }
+          }
+         }
+        }
+       }
+      }
+     }
     }
     label end
    }
   }
  }
- microchip.pic18/GOTO( c = label(15)){
-  51: 1110111100001111
-  52: 1111000000000000
+ microchip.pic18/GOTO( c = label(16)){
+  56: 1110111100010000
+  57: 1111000000000000
  }
 }

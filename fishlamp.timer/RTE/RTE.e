@@ -4,6 +4,8 @@ import e.types;
 import RTE.ProtocolHandler;
 import RTE.Communicator;
 import RTE.SecondProvider;
+import RTE.Clock;
+import RTE.Types; 
 
 init(){
 	RTE.SecondProvider.init();
@@ -18,4 +20,12 @@ run(){
 
 Communicator_dataReceived(uint8 rcv){
 	RTE.ProtocolHandler.dataReceived(rcv);
+}
+
+SecondProvider_secondElapsed(){
+	RTE.Clock.secondElapsed();
+}
+
+Clock_timeChanged(Time time){
+	RTE.Communicator.timeChanged(time);
 }

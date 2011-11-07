@@ -9,7 +9,7 @@ type Time = struct{
 	uint8 hour
 }
 
-Time_increment(Time time){
+Time_increment(var Time time){
 	time.sec = time.sec + 1;
 	if (time.sec == 60){
 		time.sec = 0;
@@ -21,4 +21,10 @@ Time_increment(Time time){
 			}
 		}
 	}
+}
+
+Time_copy(var Time to, var Time from){
+	to.sec = from.sec;
+	to.min = from.min;
+	to.hour = from.hour;
 }
