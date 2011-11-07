@@ -17,9 +17,8 @@ uint8 pendingmessage;
  * Receive a byte
  */
 dataReceived(uint8 rcv){
-	uint8 r;
-	isequal_u8(r,pendingmessage, 0);
-	if(r){
+
+	if(pendingmessage == 0){
 		//no current message
 		pendingmessage = rcv;
 	}
