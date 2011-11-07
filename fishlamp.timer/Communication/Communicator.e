@@ -1,17 +1,12 @@
-namespace ProtocolHandler;
+namespace Communicator;
 
 import e.types;
 import e.platform;
-import ProtocolHandler.messages;
 import pic18f14k50.eusart;
-
-uint8 rcvmsg_started;
-uint8 rcvcount;
-TMessage rcvmessage;
+import RTE.Communicator;
 
 init(){
 	RS232_init();
-	rcvmsg_started = 0;
 }
 
 refresh(){
@@ -22,8 +17,6 @@ refresh(){
 	RS232_rcv(rcv, rcvcounter);
 	if (rcvcounter){
 		// data is received
-		
-		
-		
+		RTE.Communicator.dataReceived(rcv);
 	}
 }

@@ -21,7 +21,7 @@ binary fishlamp hexfile{
 
 binary config{
 	data {
-		0x18; //CPU DIV is 4
+		0;
 		CONFIG1H_FCMEN_Disabled+CONFIG1H_IESO_Disabled+CONFIG1H_OSC_INTRCPortonRA6PortonRA7;
 		CONFIG2L_BODENV__20V+CONFIG2L_BODEN_DisabledinhardwareSBORENdisabled+CONFIG2L_PUT_Disabled;
 		CONFIG2H_WDTPS__18192+CONFIG2H_WDT_DisabledControlledbySWDTENbit;
