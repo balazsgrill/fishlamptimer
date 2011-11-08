@@ -5,9 +5,9 @@ import e.platform;
 import ProtocolHandler;
 
 init(){
-	ProtocolHandler.init();
+	ProtocolHandler::init();
 }
 
 dataReceived(uint8 rcv){
-	ProtocolHandler.dataReceived(rcv);
+	ProtocolHandler::dataReceived(rcv);
 }

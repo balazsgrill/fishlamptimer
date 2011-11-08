@@ -6,13 +6,13 @@ import SecondProvider;
 import RTE;
 
 init(){
-	SecondProvider.init();
+	SecondProvider::init();
 }
 
 refresh(){
-	SecondProvider.refresh();
+	SecondProvider::refresh();
 }
 
 secondElapsed(){
-	RTE.SecondProvider_secondElapsed();
+	RTE::SecondProvider_secondElapsed();
 }

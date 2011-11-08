@@ -8,5 +8,5 @@ Time currentTime;
 
 secondElapsed(){
 	Time_increment(currentTime);
-	RTE.Clock.timeChanged(currentTime);
+	RTE.Clock::timeChanged(currentTime);
 }

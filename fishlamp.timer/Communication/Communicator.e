@@ -19,7 +19,7 @@ refresh(){
 	RS232_rcv(rcv, rcvcounter);
 	if (rcvcounter){
 		// data is received
-		RTE.Communicator.dataReceived(rcv);
+		RTE.Communicator::dataReceived(rcv);
 	}
 }
 

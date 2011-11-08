@@ -5,9 +5,9 @@ import microchip.pic18;
 import RTE;
 
 main(){
-	RTE.init();
+	RTE::init();
 	label start;
-	RTE.run();
+	RTE::run();
 	GOTO(@start);
 }
 
