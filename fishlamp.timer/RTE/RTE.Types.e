@@ -15,6 +15,7 @@ Time_increment(var Time time){
 		time.sec = 0;
 		time.min = time.min + 1;
 		if (time.min == 60){
+			time.min = 0;
 			time.hour = time.hour+1;
 			if (time.hour == 24){
 				time.hour = 0;

@@ -4,6 +4,10 @@ import Clock;
 import RTE.Types;
 import RTE;
 
+init(){
+	Clock::init();
+}
+
 secondElapsed(){
 	Clock::secondElapsed();
 }

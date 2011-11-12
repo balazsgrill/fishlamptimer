@@ -10,6 +10,7 @@ import dio;
 import spi;
 
 init(){
+	RTE.Clock::init();
 	RTE.SecondProvider::init();
 	RTE.Communicator::init();
 	RTE.ProtocolHandler::init();

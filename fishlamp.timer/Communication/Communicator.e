@@ -5,10 +5,17 @@ import e.platform;
 import pic18f14k50.eusart;
 import RTE.Communicator;
 import RTE.Types;
+import RTE;
+
+uint8 sendState;
+Time currentTime; 
 
 init(){
 	RS232_init();
 	sendState = 0;
+	currentTime.sec = 0;
+	currentTime.min = 0;
+	currentTime.hour = 0;
 }
 
 refresh(){
@@ -48,12 +55,13 @@ refresh(){
 	
 }
 
-uint8 sendState;
-Time currentTime; 
-
 timeChanged(Time time){
+	RTE::debug(time.sec);
 	if (sendState == 0){
-		Time_copy(currentTime, time);
+		//Time_copy(currentTime, time);
+		currentTime.sec = time.sec;
+		currentTime.min = time.min;
+		currentTime.hour = time.hour;
 		sendState = 4;
 	}
 }
