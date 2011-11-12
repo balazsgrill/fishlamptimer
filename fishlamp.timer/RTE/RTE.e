@@ -6,6 +6,8 @@ import RTE.Communicator;
 import RTE.SecondProvider;
 import RTE.Clock;
 import RTE.Types; 
+import dio;
+import spi;
 
 init(){
 	RTE.SecondProvider::init();
@@ -28,4 +30,8 @@ SecondProvider_secondElapsed(){
 
 Clock_timeChanged(Time time){
 	RTE.Communicator::timeChanged(time);
+}
+
+debug(uint8 d){
+	SPI_Send(RC0, RC1, d);
 }

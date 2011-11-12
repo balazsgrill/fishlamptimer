@@ -1,0 +1,1756 @@
+test::main(){
+ e.platform.u8::set_u8( v = 80, dest = uint8@4051){
+  microchip.pic18::MOVLW( k = 80){
+   0: 111001010000
+  }
+  microchip.pic18.assisted::aMOVWF( f = 4051){
+   microchip.pic18.assisted::assistSelectBank( f = 4051){
+   }
+   microchip.pic18::MOVWF( f = 4051, a = {}0){
+    1: 110111011010011
+   }
+  }
+ }
+ e.platform.u8::set_u8( v = 0, dest = uint8@3966){
+  microchip.pic18.assisted::aCLRF( f = 3966){
+   microchip.pic18.assisted::assistSelectBank( f = 3966){
+   }
+   microchip.pic18::CLRF( f = 3966, a = {}0){
+    2: 110101001111110
+   }
+  }
+ }
+ e.platform.u8::set_u8( v = 0, dest = uint8@3967){
+  microchip.pic18.assisted::aCLRF( f = 3967){
+   microchip.pic18.assisted::assistSelectBank( f = 3967){
+   }
+   microchip.pic18::CLRF( f = 3967, a = {}0){
+    3: 110101001111111
+   }
+  }
+ }
+ e.platform.u8::set_u8( v = 0, dest = uint8@3988){
+  microchip.pic18.assisted::aCLRF( f = 3988){
+   microchip.pic18.assisted::assistSelectBank( f = 3988){
+   }
+   microchip.pic18::CLRF( f = 3988, a = {}0){
+    4: 110101010010100
+   }
+  }
+ }
+ e.platform.u8::set_u8( v = 0, dest = uint8@3970){
+  microchip.pic18.assisted::aCLRF( f = 3970){
+   microchip.pic18.assisted::assistSelectBank( f = 3970){
+   }
+   microchip.pic18::CLRF( f = 3970, a = {}0){
+    5: 110101010000010
+   }
+  }
+ }
+ e.platform.u8::set_u8( v = 0, dest = uint8@3979){
+  microchip.pic18.assisted::aCLRF( f = 3979){
+   microchip.pic18.assisted::assistSelectBank( f = 3979){
+   }
+   microchip.pic18::CLRF( f = 3979, a = {}0){
+    6: 110101010001011
+   }
+  }
+ }
+ e.platform.u8::set_u8( v = 0, dest = uint8@1){
+  microchip.pic18.assisted::aCLRF( f = 1){
+   microchip.pic18.assisted::assistSelectBank( f = 1){
+   }
+   microchip.pic18::CLRF( f = 1, a = {}0){
+    7: 110101000000001
+   }
+  }
+ }
+ e.platform.u8::set_u8( v = 0, dest = uint8@0){
+  microchip.pic18.assisted::aCLRF( f = 0){
+   microchip.pic18.assisted::assistSelectBank( f = 0){
+   }
+   microchip.pic18::CLRF( f = 0, a = {}0){
+    8: 110101000000000
+   }
+  }
+ }
+ e.platform.u8::set_u8( v = 0, dest = uint8@3969){
+  microchip.pic18.assisted::aCLRF( f = 3969){
+   microchip.pic18.assisted::assistSelectBank( f = 3969){
+   }
+   microchip.pic18::CLRF( f = 3969, a = {}0){
+    9: 110101010000001
+   }
+  }
+ }
+ e.platform.u8::set_u8( v = 0, dest = uint8@3978){
+  microchip.pic18.assisted::aCLRF( f = 3978){
+   microchip.pic18.assisted::assistSelectBank( f = 3978){
+   }
+   microchip.pic18::CLRF( f = 3978, a = {}0){
+    10: 110101010001010
+   }
+  }
+ }
+ e.platform.u8::set_u8( v = 0, dest = uint8@3987){
+  microchip.pic18.assisted::aCLRF( f = 3987){
+   microchip.pic18.assisted::assistSelectBank( f = 3987){
+   }
+   microchip.pic18::CLRF( f = 3987, a = {}0){
+    11: 110101010010011
+   }
+  }
+ }
+ e.platform.u8::set_u8( v = 255, dest = uint8@2){
+  microchip.pic18.assisted::aSETF( f = 2){
+   microchip.pic18.assisted::assistSelectBank( f = 2){
+   }
+   microchip.pic18::SETF( a = {}0, f = 2){
+    12: 110100000000010
+   }
+  }
+ }
+ spi::SPI_Send( tx = 10, d = uint8@2, clk = 9){
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      13: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    14: 0
+   }
+   microchip.pic18::NOP(){
+    15: 0
+   }
+   microchip.pic18::NOP(){
+    16: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 0){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 0, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 0){
+      17: 1011000000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(23)){
+     18: 1110111100010111
+     19: 1111000000000000
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      20: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(24)){
+     21: 1110111100011000
+     22: 1111000000000000
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      23: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    24: 0
+   }
+   microchip.pic18::NOP(){
+    25: 0
+   }
+   microchip.pic18::NOP(){
+    26: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      27: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    28: 0
+   }
+   microchip.pic18::NOP(){
+    29: 0
+   }
+   microchip.pic18::NOP(){
+    30: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      31: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    32: 0
+   }
+   microchip.pic18::NOP(){
+    33: 0
+   }
+   microchip.pic18::NOP(){
+    34: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 1){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 1, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 1, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 1){
+      35: 1011001000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(41)){
+     36: 1110111100101001
+     37: 1111000000000000
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      38: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(42)){
+     39: 1110111100101010
+     40: 1111000000000000
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      41: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    42: 0
+   }
+   microchip.pic18::NOP(){
+    43: 0
+   }
+   microchip.pic18::NOP(){
+    44: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      45: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    46: 0
+   }
+   microchip.pic18::NOP(){
+    47: 0
+   }
+   microchip.pic18::NOP(){
+    48: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      49: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    50: 0
+   }
+   microchip.pic18::NOP(){
+    51: 0
+   }
+   microchip.pic18::NOP(){
+    52: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 2){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 2, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 2, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 2){
+      53: 1011010000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(59)){
+     54: 1110111100111011
+     55: 1111000000000000
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      56: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(60)){
+     57: 1110111100111100
+     58: 1111000000000000
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      59: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    60: 0
+   }
+   microchip.pic18::NOP(){
+    61: 0
+   }
+   microchip.pic18::NOP(){
+    62: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      63: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    64: 0
+   }
+   microchip.pic18::NOP(){
+    65: 0
+   }
+   microchip.pic18::NOP(){
+    66: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      67: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    68: 0
+   }
+   microchip.pic18::NOP(){
+    69: 0
+   }
+   microchip.pic18::NOP(){
+    70: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 3){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 3, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 3, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 3){
+      71: 1011011000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(77)){
+     72: 1110111101001101
+     73: 1111000000000000
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      74: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(78)){
+     75: 1110111101001110
+     76: 1111000000000000
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      77: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    78: 0
+   }
+   microchip.pic18::NOP(){
+    79: 0
+   }
+   microchip.pic18::NOP(){
+    80: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      81: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    82: 0
+   }
+   microchip.pic18::NOP(){
+    83: 0
+   }
+   microchip.pic18::NOP(){
+    84: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      85: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    86: 0
+   }
+   microchip.pic18::NOP(){
+    87: 0
+   }
+   microchip.pic18::NOP(){
+    88: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 4){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 4, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 4, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 4){
+      89: 1011100000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(95)){
+     90: 1110111101011111
+     91: 1111000000000000
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      92: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(96)){
+     93: 1110111101100000
+     94: 1111000000000000
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      95: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    96: 0
+   }
+   microchip.pic18::NOP(){
+    97: 0
+   }
+   microchip.pic18::NOP(){
+    98: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      99: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    100: 0
+   }
+   microchip.pic18::NOP(){
+    101: 0
+   }
+   microchip.pic18::NOP(){
+    102: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      103: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    104: 0
+   }
+   microchip.pic18::NOP(){
+    105: 0
+   }
+   microchip.pic18::NOP(){
+    106: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 5){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 5, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 5, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 5){
+      107: 1011101000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(113)){
+     108: 1110111101110001
+     109: 1111000000000000
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      110: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(114)){
+     111: 1110111101110010
+     112: 1111000000000000
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      113: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    114: 0
+   }
+   microchip.pic18::NOP(){
+    115: 0
+   }
+   microchip.pic18::NOP(){
+    116: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      117: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    118: 0
+   }
+   microchip.pic18::NOP(){
+    119: 0
+   }
+   microchip.pic18::NOP(){
+    120: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      121: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    122: 0
+   }
+   microchip.pic18::NOP(){
+    123: 0
+   }
+   microchip.pic18::NOP(){
+    124: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 6){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 6, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 6, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 6){
+      125: 1011110000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(131)){
+     126: 1110111110000011
+     127: 1111000000000000
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      128: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(132)){
+     129: 1110111110000100
+     130: 1111000000000000
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      131: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    132: 0
+   }
+   microchip.pic18::NOP(){
+    133: 0
+   }
+   microchip.pic18::NOP(){
+    134: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      135: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    136: 0
+   }
+   microchip.pic18::NOP(){
+    137: 0
+   }
+   microchip.pic18::NOP(){
+    138: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      139: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    140: 0
+   }
+   microchip.pic18::NOP(){
+    141: 0
+   }
+   microchip.pic18::NOP(){
+    142: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 7){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 7, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 7, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 7){
+      143: 1011111000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(149)){
+     144: 1110111110010101
+     145: 1111000000000000
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      146: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(150)){
+     147: 1110111110010110
+     148: 1111000000000000
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      149: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    150: 0
+   }
+   microchip.pic18::NOP(){
+    151: 0
+   }
+   microchip.pic18::NOP(){
+    152: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      153: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    154: 0
+   }
+   microchip.pic18::NOP(){
+    155: 0
+   }
+   microchip.pic18::NOP(){
+    156: 0
+   }
+  }
+ }
+ pic18f14k50.eusart::RS232_init(){
+  microchip.pic18.assisted::aBSF( b = 5, f = 3987){
+   microchip.pic18.assisted::assistSelectBank( f = 3987){
+   }
+   microchip.pic18::BSF( a = {}0, f = 3987, b = 5){
+    157: 1000101010010011
+   }
+  }
+  microchip.pic18.assisted::aBSF( b = 7, f = 3987){
+   microchip.pic18.assisted::assistSelectBank( f = 3987){
+   }
+   microchip.pic18::BSF( a = {}0, f = 3987, b = 7){
+    158: 1000111010010011
+   }
+  }
+  microchip.pic18.assisted::aBSF( b = 2, f = 4012){
+   microchip.pic18.assisted::assistSelectBank( f = 4012){
+   }
+   microchip.pic18::BSF( a = {}0, f = 4012, b = 2){
+    159: 1000010010101100
+   }
+  }
+  microchip.pic18::MOVLW( k = 25){
+   160: 111000011001
+  }
+  microchip.pic18.assisted::aMOVWF( f = 4015){
+   microchip.pic18.assisted::assistSelectBank( f = 4015){
+   }
+   microchip.pic18::MOVWF( f = 4015, a = {}0){
+    161: 110111010101111
+   }
+  }
+  microchip.pic18.assisted::aCLRF( f = 4016){
+   microchip.pic18.assisted::assistSelectBank( f = 4016){
+   }
+   microchip.pic18::CLRF( f = 4016, a = {}0){
+    162: 110101010110000
+   }
+  }
+  microchip.pic18.assisted::aBSF( b = 5, f = 4012){
+   microchip.pic18.assisted::assistSelectBank( f = 4012){
+   }
+   microchip.pic18::BSF( a = {}0, f = 4012, b = 5){
+    163: 1000101010101100
+   }
+  }
+  microchip.pic18.assisted::aBSF( b = 4, f = 4011){
+   microchip.pic18.assisted::assistSelectBank( f = 4011){
+   }
+   microchip.pic18::BSF( a = {}0, f = 4011, b = 4){
+    164: 1000100010101011
+   }
+  }
+  microchip.pic18.assisted::aBCF( b = 4, f = 4012){
+   microchip.pic18.assisted::assistSelectBank( f = 4012){
+   }
+   microchip.pic18::BCF( b = 4, a = {}0, f = 4012){
+    165: 1001100010101100
+   }
+  }
+  microchip.pic18.assisted::aBSF( b = 7, f = 4011){
+   microchip.pic18.assisted::assistSelectBank( f = 4011){
+   }
+   microchip.pic18::BSF( a = {}0, f = 4011, b = 7){
+    166: 1000111010101011
+   }
+  }
+ }
+ label start
+ pic18f14k50.eusart::RS232_syncSend( rcv = uint8@0, send = uint8@2){
+  microchip.pic18.assisted::aBTFSS( f = 3998, b = 4){
+   microchip.pic18.assisted::assistSelectBank( f = 3998){
+   }
+   microchip.pic18::BTFSS( b = 4, a = {}0, f = 3998){
+    167: 1010100010011110
+   }
+  }
+  microchip.pic18::GOTO( c = label(172)){
+   168: 1110111110101100
+   169: 1111000000000000
+  }
+  microchip.pic18::MOVFF( d = 4013, s = 2){
+   170: 1100000000000010
+   171: 1111111110101101
+  }
+  label nosend
+  microchip.pic18.assisted::aBTFSS( f = 3998, b = 5){
+   microchip.pic18.assisted::assistSelectBank( f = 3998){
+   }
+   microchip.pic18::BTFSS( b = 5, a = {}0, f = 3998){
+    172: 1010101010011110
+   }
+  }
+  microchip.pic18::GOTO( c = label(177)){
+   173: 1110111110110001
+   174: 1111000000000000
+  }
+  microchip.pic18::MOVFF( d = 0, s = 4014){
+   175: 1100111110101110
+   176: 1111000000000000
+  }
+  label norcv
+ }
+ e.platform.u8::isequal_u8( d2 = uint8@2, d1 = uint8@0){
+  microchip.pic18.assisted::aMOVF( d = 0, f = 2){
+   microchip.pic18.assisted::assistSelectBank( f = 2){
+   }
+   microchip.pic18::MOVF( f = 2, d = 0, a = {}0){
+    177: 101000000000010
+   }
+  }
+  microchip.pic18.assisted::aCPFSEQ( f = 0){
+   microchip.pic18.assisted::assistSelectBank( f = 0){
+   }
+   microchip.pic18::CPFSEQ( f = 0, a = {}0){
+    178: 110001000000000
+   }
+  }
+  microchip.pic18::GOTO( c = label(185)){
+   179: 1110111110111001
+   180: 1111000000000000
+  }
+  e.platform.u8::set_u8( v = 1, dest = bool@3){
+   microchip.pic18::MOVLW( k = 1){
+    181: 111000000001
+   }
+   microchip.pic18.assisted::aMOVWF( f = 3){
+    microchip.pic18.assisted::assistSelectBank( f = 3){
+    }
+    microchip.pic18::MOVWF( f = 3, a = {}0){
+     182: 110111000000011
+    }
+   }
+  }
+  microchip.pic18::GOTO( c = label(188)){
+   183: 1110111110111100
+   184: 1111000000000000
+  }
+  label notequal
+  e.platform.u8::set_u8( v = 0, dest = bool@3){
+   microchip.pic18.assisted::aCLRF( f = 3){
+    microchip.pic18.assisted::assistSelectBank( f = 3){
+    }
+    microchip.pic18::CLRF( f = 3, a = {}0){
+     185: 110101000000011
+    }
+   }
+  }
+  microchip.pic18::GOTO( c = label(188)){
+   186: 1110111110111100
+   187: 1111000000000000
+  }
+  label end
+ }
+ e.platform.u8::branch_bool( condition = EQUALS(uint8@0, uint8@2), true = Code(193), false = Code(195)){
+  microchip.pic18.assisted::aBTFSC( b = 0, f = 3){
+   microchip.pic18.assisted::assistSelectBank( f = 3){
+   }
+   microchip.pic18::BTFSC( f = 3, a = {}0, b = 0){
+    188: 1011000000000011
+   }
+  }
+  microchip.pic18::GOTO( c = Code(193)){
+   189: 1110111111000001
+   190: 1111000000000000
+  }
+  microchip.pic18::GOTO( c = Code(195)){
+   191: 1110111111000011
+   192: 1111000000000000
+  }
+ }
+ label Code(193)
+ microchip.pic18::GOTO( c = Code(341)){
+  193: 1110111101010101
+  194: 1111000000000001
+ }
+ label Code(195)
+ e.platform.u8::set_u8( v = uint8@0, dest = uint8@2){
+  microchip.pic18::MOVFF( d = 2, s = 0){
+   195: 1100000000000000
+   196: 1111000000000010
+  }
+ }
+ spi::SPI_Send( tx = 10, d = uint8@2, clk = 9){
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      197: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    198: 0
+   }
+   microchip.pic18::NOP(){
+    199: 0
+   }
+   microchip.pic18::NOP(){
+    200: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 0){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 0, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 0){
+      201: 1011000000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(207)){
+     202: 1110111111001111
+     203: 1111000000000000
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      204: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(208)){
+     205: 1110111111010000
+     206: 1111000000000000
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      207: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    208: 0
+   }
+   microchip.pic18::NOP(){
+    209: 0
+   }
+   microchip.pic18::NOP(){
+    210: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      211: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    212: 0
+   }
+   microchip.pic18::NOP(){
+    213: 0
+   }
+   microchip.pic18::NOP(){
+    214: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      215: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    216: 0
+   }
+   microchip.pic18::NOP(){
+    217: 0
+   }
+   microchip.pic18::NOP(){
+    218: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 1){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 1, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 1, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 1){
+      219: 1011001000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(225)){
+     220: 1110111111100001
+     221: 1111000000000000
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      222: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(226)){
+     223: 1110111111100010
+     224: 1111000000000000
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      225: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    226: 0
+   }
+   microchip.pic18::NOP(){
+    227: 0
+   }
+   microchip.pic18::NOP(){
+    228: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      229: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    230: 0
+   }
+   microchip.pic18::NOP(){
+    231: 0
+   }
+   microchip.pic18::NOP(){
+    232: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      233: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    234: 0
+   }
+   microchip.pic18::NOP(){
+    235: 0
+   }
+   microchip.pic18::NOP(){
+    236: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 2){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 2, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 2, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 2){
+      237: 1011010000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(243)){
+     238: 1110111111110011
+     239: 1111000000000000
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      240: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(244)){
+     241: 1110111111110100
+     242: 1111000000000000
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      243: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    244: 0
+   }
+   microchip.pic18::NOP(){
+    245: 0
+   }
+   microchip.pic18::NOP(){
+    246: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      247: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    248: 0
+   }
+   microchip.pic18::NOP(){
+    249: 0
+   }
+   microchip.pic18::NOP(){
+    250: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      251: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    252: 0
+   }
+   microchip.pic18::NOP(){
+    253: 0
+   }
+   microchip.pic18::NOP(){
+    254: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 3){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 3, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 3, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 3){
+      255: 1011011000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(261)){
+     256: 1110111100000101
+     257: 1111000000000001
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      258: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(262)){
+     259: 1110111100000110
+     260: 1111000000000001
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      261: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    262: 0
+   }
+   microchip.pic18::NOP(){
+    263: 0
+   }
+   microchip.pic18::NOP(){
+    264: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      265: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    266: 0
+   }
+   microchip.pic18::NOP(){
+    267: 0
+   }
+   microchip.pic18::NOP(){
+    268: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      269: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    270: 0
+   }
+   microchip.pic18::NOP(){
+    271: 0
+   }
+   microchip.pic18::NOP(){
+    272: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 4){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 4, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 4, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 4){
+      273: 1011100000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(279)){
+     274: 1110111100010111
+     275: 1111000000000001
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      276: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(280)){
+     277: 1110111100011000
+     278: 1111000000000001
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      279: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    280: 0
+   }
+   microchip.pic18::NOP(){
+    281: 0
+   }
+   microchip.pic18::NOP(){
+    282: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      283: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    284: 0
+   }
+   microchip.pic18::NOP(){
+    285: 0
+   }
+   microchip.pic18::NOP(){
+    286: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      287: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    288: 0
+   }
+   microchip.pic18::NOP(){
+    289: 0
+   }
+   microchip.pic18::NOP(){
+    290: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 5){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 5, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 5, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 5){
+      291: 1011101000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(297)){
+     292: 1110111100101001
+     293: 1111000000000001
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      294: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(298)){
+     295: 1110111100101010
+     296: 1111000000000001
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      297: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    298: 0
+   }
+   microchip.pic18::NOP(){
+    299: 0
+   }
+   microchip.pic18::NOP(){
+    300: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      301: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    302: 0
+   }
+   microchip.pic18::NOP(){
+    303: 0
+   }
+   microchip.pic18::NOP(){
+    304: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      305: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    306: 0
+   }
+   microchip.pic18::NOP(){
+    307: 0
+   }
+   microchip.pic18::NOP(){
+    308: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 6){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 6, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 6, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 6){
+      309: 1011110000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(315)){
+     310: 1110111100111011
+     311: 1111000000000001
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      312: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(316)){
+     313: 1110111100111100
+     314: 1111000000000001
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      315: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    316: 0
+   }
+   microchip.pic18::NOP(){
+    317: 0
+   }
+   microchip.pic18::NOP(){
+    318: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      319: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    320: 0
+   }
+   microchip.pic18::NOP(){
+    321: 0
+   }
+   microchip.pic18::NOP(){
+    322: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 0, b = 0){
+   dio::DIO_RawSet( v = 0, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBCF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 0, a = {}0, f = 3979){
+      323: 1001000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    324: 0
+   }
+   microchip.pic18::NOP(){
+    325: 0
+   }
+   microchip.pic18::NOP(){
+    326: 0
+   }
+  }
+  dio::DIO_Set( channel = 10, v = uint8@2, b = 7){
+   dio::DIO_RawSet( v = uint8@2, pin = 1, b = 7, latch = 3979){
+    microchip.pic18.assisted::aBTFSC( b = 7, f = 2){
+     microchip.pic18.assisted::assistSelectBank( f = 2){
+     }
+     microchip.pic18::BTFSC( f = 2, a = {}0, b = 7){
+      327: 1011111000000010
+     }
+    }
+    microchip.pic18::GOTO( c = label(333)){
+     328: 1110111101001101
+     329: 1111000000000001
+    }
+    microchip.pic18.assisted::aBCF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BCF( b = 1, a = {}0, f = 3979){
+      330: 1001001010001011
+     }
+    }
+    microchip.pic18::GOTO( c = label(334)){
+     331: 1110111101001110
+     332: 1111000000000001
+    }
+    label true
+    microchip.pic18.assisted::aBSF( b = 1, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 1){
+      333: 1000001010001011
+     }
+    }
+    label done
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    334: 0
+   }
+   microchip.pic18::NOP(){
+    335: 0
+   }
+   microchip.pic18::NOP(){
+    336: 0
+   }
+  }
+  dio::DIO_Set( channel = 9, v = 1, b = 0){
+   dio::DIO_RawSet( v = 1, pin = 0, b = 0, latch = 3979){
+    microchip.pic18.assisted::aBSF( b = 0, f = 3979){
+     microchip.pic18.assisted::assistSelectBank( f = 3979){
+     }
+     microchip.pic18::BSF( a = {}0, f = 3979, b = 0){
+      337: 1000000010001011
+     }
+    }
+   }
+  }
+  spi::wait(){
+   microchip.pic18::NOP(){
+    338: 0
+   }
+   microchip.pic18::NOP(){
+    339: 0
+   }
+   microchip.pic18::NOP(){
+    340: 0
+   }
+  }
+ }
+ label Code(341)
+ spi::wait(){
+  microchip.pic18::NOP(){
+   341: 0
+  }
+  microchip.pic18::NOP(){
+   342: 0
+  }
+  microchip.pic18::NOP(){
+   343: 0
+  }
+ }
+ microchip.pic18::GOTO( c = label(167)){
+  344: 1110111110100111
+  345: 1111000000000000
+ }
+}

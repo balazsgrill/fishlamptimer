@@ -2,9 +2,25 @@ namespace main;
 
 import microchip.PIC18F14K50;
 import microchip.pic18;
+import e.types;
+import e.platform;
 import RTE;
 
+reg uint8 ANSELH : 0xF7F;
+reg uint8 ANSEL : 0xF7E;
+
 main(){
+	OSCCON = 0x50;
+	ANSEL = 0;
+	ANSELH = 0;
+	TRISC = 0;
+	PORTC = 0;
+	LATC = 0;
+	PORTB = 0;
+	LATB = 0;
+	TRISB = 0;
+	RTE::debug(0x99);
+	
 	RTE::init();
 	label start;
 	RTE::run();
