@@ -7,10 +7,8 @@ package fishlamp.application.protocol;
  * @author balazs.grill
  *
  */
-public abstract class FrameParser {
+public interface IFrameListener {
 
-	public void newByte(short d){
-		
-	}
+	public void frameArrived(Object frame);
 	
 }

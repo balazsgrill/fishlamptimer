@@ -8,20 +8,22 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.TooManyListenersException;
 
+import fishlamp.application.protocol.IFrameListener;
+import fishlamp.application.protocol.IFrameParser;
+import fishlamp.application.protocol.IFrameParserFactory;
+import fishlamp.application.protocol.InputStreamParser;
 import gnu.io.CommPort;
 import gnu.io.CommPortIdentifier;
 import gnu.io.NoSuchPortException;
 import gnu.io.PortInUseException;
 import gnu.io.SerialPort;
-import gnu.io.SerialPortEvent;
-import gnu.io.SerialPortEventListener;
 import gnu.io.UnsupportedCommOperationException;
 
 /**
  * @author balage
  *
  */
-public class FishlampComm {
+public class FishlampComm implements IFrameParserFactory{
 
 	public FishlampComm(String port) throws NoSuchPortException, PortInUseException, UnsupportedCommOperationException, IOException, TooManyListenersException {
 		 CommPortIdentifier portIdentifier = CommPortIdentifier.getPortIdentifier(port);
@@ -30,46 +32,37 @@ public class FishlampComm {
          if ( commPort instanceof SerialPort )
          {
              SerialPort serialPort = (SerialPort) commPort;
-             serialPort.setSerialPortParams(57600,SerialPort.DATABITS_8,SerialPort.STOPBITS_1,SerialPort.PARITY_NONE);
+             serialPort.setSerialPortParams(
+            		 9600,SerialPort.DATABITS_8,SerialPort.STOPBITS_1,SerialPort.PARITY_NONE);
              
              final InputStream in = serialPort.getInputStream();
              OutputStream out = serialPort.getOutputStream();
                             
-             //(new Thread(new SerialWriter(out))).start();
-             
-             serialPort.addEventListener(new SerialPortEventListener() {
+             InputStreamParser parser = new InputStreamParser(this, in);
+             parser.addListener(new IFrameListener() {
 				
 				@Override
-				public void serialEvent(SerialPortEvent arg0) {
-					int data;
-			          
-		            try
-		            {
-		                int len = 0;
-		                while ( ( data = in.read()) > -1 )
-		                {
-//		                    if ( data == '\n' ) {
-//		                        break;
-//		                    }
-		                    //buffer[len++] = (byte) data;
-		                }
-		                //System.out.print(new String(buffer,0,len));
-		            }
-		            catch ( IOException e )
-		            {
-		                e.printStackTrace();
-		                System.exit(-1);
-		            } 
-					
+				public void frameArrived(Object frame) {
+						System.out.println("Frame: "+frame);
 				}
 			});
-             serialPort.notifyOnDataAvailable(true);
+             Thread t = new Thread(parser);
+             t.setDaemon(true);
+             t.start();
 
          }
          else
          {
              
          }
+	}
+
+	@Override
+	public IFrameParser<?> startParsing(short firstbyte) {
+		switch(firstbyte){
+		case 0xFF: return new TimeFrameParser(); 
+		}
+		return null;
 	}
 	
 }
