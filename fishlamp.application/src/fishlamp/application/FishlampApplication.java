@@ -44,6 +44,7 @@ public class FishlampApplication implements IApplication {
 		Label l = new Label(shell, SWT.NONE);
 		l.setText("Device: ");
 		final Text dev = new Text(shell, SWT.BORDER);
+		dev.setText("/dev/ttyUSB0");
 		dev.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
 		
 		Button start = new Button(shell, SWT.PUSH);

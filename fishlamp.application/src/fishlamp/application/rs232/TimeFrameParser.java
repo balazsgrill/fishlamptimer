@@ -19,12 +19,15 @@ public class TimeFrameParser implements IFrameParser<TimeFrame> {
 		switch(state){
 		case 0:
 			state++;
+			frame.hour = d;
 			break;
 		case 1:
 			state++;
+			frame.min = d;
 			break;
 		case 2:
 			state++;
+			frame.sec = d;
 			break;
 		}
 		
@@ -32,7 +35,7 @@ public class TimeFrameParser implements IFrameParser<TimeFrame> {
 
 	@Override
 	public boolean done() {
-		return state == 2;
+		return state == 3;
 	}
 
 	@Override
