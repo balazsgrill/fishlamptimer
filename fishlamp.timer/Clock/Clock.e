@@ -17,3 +17,8 @@ secondElapsed(){
 	Time_increment(currentTime);
 	RTE.Clock::timeChanged(currentTime);
 }
+
+timeReceived(Time time){
+	Time_copy(currentTime, time);
+	RTE.Clock::timeChanged(currentTime);
+}

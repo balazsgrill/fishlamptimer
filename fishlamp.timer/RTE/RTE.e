@@ -25,6 +25,10 @@ Communicator_dataReceived(uint8 rcv){
 	RTE.ProtocolHandler::dataReceived(rcv);
 }
 
+ProtocolHandler_timeReceived(Time time){
+	RTE.Clock::timeReceived(time);
+}
+
 SecondProvider_secondElapsed(){
 	RTE.Clock::secondElapsed();
 }
