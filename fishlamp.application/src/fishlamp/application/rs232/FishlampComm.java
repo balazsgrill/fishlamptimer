@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.TooManyListenersException;
 
+import fishlamp.application.protocol.IFrame;
 import fishlamp.application.protocol.IFrameListener;
 import fishlamp.application.protocol.IFrameParser;
 import fishlamp.application.protocol.IFrameParserFactory;
@@ -25,6 +26,8 @@ import gnu.io.UnsupportedCommOperationException;
  */
 public class FishlampComm implements IFrameParserFactory{
 
+	private OutputStream out;
+
 	public FishlampComm(String port) throws NoSuchPortException, PortInUseException, UnsupportedCommOperationException, IOException, TooManyListenersException {
 		 CommPortIdentifier portIdentifier = CommPortIdentifier.getPortIdentifier(port);
 		 CommPort commPort = portIdentifier.open(this.getClass().getName(),2000);
@@ -36,7 +39,7 @@ public class FishlampComm implements IFrameParserFactory{
             		 9600,SerialPort.DATABITS_8,SerialPort.STOPBITS_1,SerialPort.PARITY_NONE);
              
              final InputStream in = serialPort.getInputStream();
-             OutputStream out = serialPort.getOutputStream();
+             out = serialPort.getOutputStream();
                             
              InputStreamParser parser = new InputStreamParser(this, in);
              parser.addListener(new IFrameListener() {
@@ -57,6 +60,13 @@ public class FishlampComm implements IFrameParserFactory{
          }
 	}
 
+	public synchronized void sendFrame(IFrame frame) throws IOException{
+		short[] data = frame.toBytes();
+		for(short d : data){
+			out.write(d);
+		}
+	}
+	
 	@Override
 	public IFrameParser<?> startParsing(short firstbyte) {
 		switch(firstbyte){

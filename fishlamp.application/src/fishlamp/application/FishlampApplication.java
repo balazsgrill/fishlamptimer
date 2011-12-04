@@ -4,6 +4,8 @@
 package fishlamp.application;
 
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.TooManyListenersException;
 
 import org.eclipse.equinox.app.IApplication;
@@ -20,6 +22,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
 import fishlamp.application.rs232.FishlampComm;
+import fishlamp.application.rs232.TimeFrame;
 import gnu.io.NoSuchPortException;
 import gnu.io.PortInUseException;
 import gnu.io.UnsupportedCommOperationException;
@@ -30,6 +33,8 @@ import gnu.io.UnsupportedCommOperationException;
  */
 public class FishlampApplication implements IApplication {
 
+	FishlampComm comm = null;
+	
 	/* (non-Javadoc)
 	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app.IApplicationContext)
 	 */
@@ -53,7 +58,7 @@ public class FishlampApplication implements IApplication {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				try {
-					new FishlampComm(dev.getText());
+					comm = new FishlampComm(dev.getText());
 				} catch (NoSuchPortException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -72,6 +77,28 @@ public class FishlampApplication implements IApplication {
 				}
 			}
 		});
+		
+		Button setCurrentTime = new Button(shell, SWT.PUSH);
+		setCurrentTime.setText("Set current time");
+		setCurrentTime.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (comm != null){
+					TimeFrame tf = new TimeFrame();
+					Calendar cal = Calendar.getInstance();
+					tf.hour = cal.get(Calendar.HOUR_OF_DAY);
+					tf.min = cal.get(Calendar.MINUTE);
+					tf.sec = cal.get(Calendar.SECOND);
+					try {
+						comm.sendFrame(tf);
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+			}
+		});
+		
 		
 		shell.pack();
 		shell.open();
