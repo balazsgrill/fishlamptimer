@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<core:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commrs232="http://modembed.hu/comm/rs232" xmlns:core="http://modembed.hu/core" xmlns:network="http://modembed.hu/network" xmlns:rs232="http://modembed.hu/network/rs232" name="root">
+<core:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:app="http://modembed.hu/application" xmlns:code="http://modembed.hu/application/code" xmlns:commrs232="http://modembed.hu/comm/rs232" xmlns:composition="http://modembed.hu/application/composition" xmlns:core="http://modembed.hu/core" xmlns:datatypes="http://modembed.hu/application/datatypes" xmlns:interface="http://modembed.hu/application/interface" xmlns:network="http://modembed.hu/network" xmlns:rs232="http://modembed.hu/network/rs232" name="root">
   <contents xsi:type="core:Package" name="network">
     <contents xsi:type="network:Network" name="fishlampNetwork">
       <nodes name="Timer">
@@ -17,5 +17,41 @@
         <fields name="hours" start="24" length="8"/>
       </frames>
     </contents>
+  </contents>
+  <contents xsi:type="core:Package" name="base">
+    <contents xsi:type="datatypes:AtomicType" name="uint8" qualifiedName="e.types::uint8"/>
+    <contents xsi:type="interface:OperationInterface" name="IScheduled">
+      <operations name="init"/>
+      <operations name="refresh"/>
+    </contents>
+    <contents xsi:type="interface:OperationInterface" name="IMain">
+      <operations name="main"/>
+    </contents>
+  </contents>
+  <contents xsi:type="core:Package" name="application">
+    <contents xsi:type="app:Application" name="FishLamp" mainComp="//@contents.2/@contents.1" mainPort="//@contents.2/@contents.1/@implements.0" main="//@contents.1/@contents.2/@operations.0"/>
+    <contents xsi:type="composition:CompositeComponent" name="FishLampComponent">
+      <implements name="main" interface="//@contents.1/@contents.2"/>
+      <components name="Clock" type="//@contents.3/@contents.0/@contents.2"/>
+    </contents>
+    <contents xsi:type="code:CodeComponent" name="Scheduler" qualifiedName="main::Scheduler">
+      <uses name="scheduled" interface="//@contents.1/@contents.1"/>
+      <implements name="main" interface="//@contents.1/@contents.2"/>
+    </contents>
+  </contents>
+  <contents xsi:type="core:Package" name="components">
+    <contents xsi:type="core:Package" name="clock">
+      <contents xsi:type="code:CodeComponent" name="SecondProvider" qualifiedName="clock::SecondProvider">
+        <uses name="second" interface="//@contents.3/@contents.0/@contents.1"/>
+        <implements name="scheduled" interface="//@contents.1/@contents.1"/>
+      </contents>
+      <contents xsi:type="interface:OperationInterface" name="ISecondListener">
+        <operations name="secondElapsed"/>
+      </contents>
+      <contents xsi:type="code:CodeComponent" name="Clock" qualifiedName="clock::Clock">
+        <implements name="second" interface="//@contents.3/@contents.0/@contents.1"/>
+      </contents>
+    </contents>
+    <contents xsi:type="core:Package" name="communication"/>
   </contents>
 </core:Package>
