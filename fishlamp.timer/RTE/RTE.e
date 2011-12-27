@@ -6,6 +6,7 @@ import RTE.Communicator;
 import RTE.SecondProvider;
 import RTE.Clock;
 import RTE.Types; 
+import RTE.Switch;
 import dio;
 import spi;
 
@@ -14,6 +15,7 @@ init(){
 	RTE.SecondProvider::init();
 	RTE.Communicator::init();
 	RTE.ProtocolHandler::init();
+	RTE.Switch::init();
 }
 
 run(){
@@ -35,6 +37,7 @@ SecondProvider_secondElapsed(){
 
 Clock_timeChanged(Time time){
 	RTE.Communicator::timeChanged(time);
+	RTE.Switch::timeChanged(time);
 }
 
 debug(uint8 d){
