@@ -34,7 +34,7 @@ Time_compare(Time t1, Time t2){
 	result = 0;
 	if (t1.hour == t2.hour){
 		if (t1.min == t2.min){
-			if (t2.sec == t2.sec){
+			if (t1.sec == t2.sec){
 				result = 1;
 			}
 		}

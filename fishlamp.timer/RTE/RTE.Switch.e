@@ -10,3 +10,7 @@ init(){
 timeChanged(Time time){
 	Switch::timeChanged(time);
 }
+
+secondElapsed(){
+	Switch::secondElapsed();
+}

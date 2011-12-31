@@ -22,35 +22,19 @@ init(){
 }
 
 timeChanged(Time currentTime){
-	if (Time_compare(onTime,currentTime)){
-		turnOn();
+	DIO_Set(PIN_SET,0);
+	DIO_Set(PIN_RESET,0);
+	if (onTime == currentTime){
+		DIO_Set(PIN_SET,1);
 	}
-	if (Time_compare(offTime,currentTime)){
-		turnOff();
+	if (offTime == currentTime){
+		DIO_Set(PIN_RESET,1);
 	}
 }
 
-deltaSignal(ChannelID ch){
-	DIO_Set(ch,1);
-	NOP();
-	NOP();
-	NOP();
-	NOP();
-	NOP();
-	NOP();
-	NOP();
-	NOP();
-	NOP();
-	NOP();
-	NOP();
-	DIO_Set(ch,0);
+secondElapsed(){
+	//DIO_Set(PIN_SET,0);
+	//DIO_Set(PIN_RESET,0);
 }
 
-turnOn(){
-	deltaSignal(PIN_SET);
-}
-
-turnOff(){
-	deltaSignal(PIN_RESET);
-}
 

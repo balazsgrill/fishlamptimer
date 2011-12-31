@@ -32,6 +32,7 @@ ProtocolHandler_timeReceived(Time time){
 }
 
 SecondProvider_secondElapsed(){
+	RTE.Switch::secondElapsed();
 	RTE.Clock::secondElapsed();
 }
 
@@ -41,5 +42,5 @@ Clock_timeChanged(Time time){
 }
 
 debug(uint8 d){
-	SPI_Send(RC0, RC1, d);
+	//SPI_Send(RC0, RC1, d);
 }

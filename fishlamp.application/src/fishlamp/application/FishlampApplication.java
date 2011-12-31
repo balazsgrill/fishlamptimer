@@ -83,22 +83,28 @@ public class FishlampApplication implements IApplication {
 		setCurrentTime.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if (comm != null){
-					TimeFrame tf = new TimeFrame();
-					Calendar cal = Calendar.getInstance();
-					tf.hour = cal.get(Calendar.HOUR_OF_DAY);
-					tf.min = cal.get(Calendar.MINUTE);
-					tf.sec = cal.get(Calendar.SECOND);
-					try {
-						comm.sendFrame(tf);
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-				}
+				Calendar cal = Calendar.getInstance();
+				sendTime(cal.get(Calendar.HOUR_OF_DAY),cal.get(Calendar.MINUTE),cal.get(Calendar.SECOND));
 			}
 		});
 		
+		Button turnOn = new Button(shell, SWT.PUSH);
+		turnOn.setText("Turn ON");
+		turnOn.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				sendTime(8,59,58);
+			}
+		});
+		
+		Button turnOff = new Button(shell, SWT.PUSH);
+		turnOff.setText("Turn OFF");
+		turnOff.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				sendTime(18,59,58);
+			}
+		});
 		
 		shell.pack();
 		shell.open();
@@ -111,6 +117,21 @@ public class FishlampApplication implements IApplication {
 		return null;
 	}
 
+	private void sendTime(int hour, int min, int sec){
+		if (comm != null){
+			TimeFrame tf = new TimeFrame();
+			tf.hour = hour;
+			tf.min = min;
+			tf.sec = sec;
+			try {
+				comm.sendFrame(tf);
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+	}
+	
 	/* (non-Javadoc)
 	 * @see org.eclipse.equinox.app.IApplication#stop()
 	 */

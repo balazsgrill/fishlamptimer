@@ -20,5 +20,5 @@ secondElapsed(){
 
 timeReceived(Time time){
 	Time_copy(currentTime, time);
-	RTE.Clock::timeChanged(currentTime);
+	//RTE.Clock::timeChanged(currentTime);
 }
