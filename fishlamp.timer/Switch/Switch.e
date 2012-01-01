@@ -6,9 +6,9 @@ import microchip.pic18;
 import dio;
 import RTE.Types;
 
-const ChannelID PIN_SET = RC0;
+const ChannelID PIN_SET = RC1;
 
-const ChannelID PIN_RESET = RC1;
+const ChannelID PIN_RESET = RC0;
 
 //Turn on
 const Time onTime = RTE.Types::Time{0,0,9};
