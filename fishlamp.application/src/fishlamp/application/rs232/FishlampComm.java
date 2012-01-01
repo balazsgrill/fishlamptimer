@@ -54,7 +54,7 @@ public class FishlampComm implements IFrameParserFactory{
 				
 				@Override
 				public void frameArrived(Object frame) {
-						System.out.println("Frame: "+frame);
+						//System.out.println("Frame: "+frame);
 						for(IFrameListener fl : listeners){
 							fl.frameArrived(frame);
 						}

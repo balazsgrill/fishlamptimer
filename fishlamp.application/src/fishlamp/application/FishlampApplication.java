@@ -5,7 +5,6 @@ package fishlamp.application;
 
 import java.io.IOException;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.TooManyListenersException;
 
 import org.eclipse.equinox.app.IApplication;
@@ -21,6 +20,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
+import fishlamp.application.protocol.IFrameListener;
 import fishlamp.application.rs232.FishlampComm;
 import fishlamp.application.rs232.TimeFrame;
 import gnu.io.NoSuchPortException;
@@ -35,6 +35,7 @@ public class FishlampApplication implements IApplication {
 
 	FishlampComm comm = null;
 	private Label calib;
+	private Label currentTime;
 	
 	/* (non-Javadoc)
 	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app.IApplicationContext)
@@ -60,6 +61,19 @@ public class FishlampApplication implements IApplication {
 			public void widgetSelected(SelectionEvent e) {
 				try {
 					comm = new FishlampComm(dev.getText());
+					comm.addListener(new IFrameListener() {
+						
+						@Override
+						public void frameArrived(final Object frame) {
+							if (frame instanceof TimeFrame){
+								currentTime.getDisplay().asyncExec(new Runnable() {
+									public void run() {
+										currentTime.setText(frame.toString());
+									}
+								});
+							}
+						}
+					});
 				} catch (NoSuchPortException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -88,6 +102,11 @@ public class FishlampApplication implements IApplication {
 				sendTime(cal.get(Calendar.HOUR_OF_DAY),cal.get(Calendar.MINUTE),cal.get(Calendar.SECOND));
 			}
 		});
+		
+		currentTime = new Label(shell, SWT.NONE);
+		currentTime.setText("No connection");
+		currentTime.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
+	
 		
 		Button turnOn = new Button(shell, SWT.PUSH);
 		turnOn.setText("Turn ON");
