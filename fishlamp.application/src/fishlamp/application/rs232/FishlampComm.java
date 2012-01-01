@@ -6,6 +6,8 @@ package fishlamp.application.rs232;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.TooManyListenersException;
 
 import fishlamp.application.protocol.IFrame;
@@ -28,6 +30,12 @@ public class FishlampComm implements IFrameParserFactory{
 
 	private OutputStream out;
 
+	private final Set<IFrameListener> listeners = new HashSet<IFrameListener>();
+	
+	public void addListener(IFrameListener listener){
+		listeners.add(listener);
+	}
+	
 	public FishlampComm(String port) throws NoSuchPortException, PortInUseException, UnsupportedCommOperationException, IOException, TooManyListenersException {
 		 CommPortIdentifier portIdentifier = CommPortIdentifier.getPortIdentifier(port);
 		 CommPort commPort = portIdentifier.open(this.getClass().getName(),2000);
@@ -47,6 +55,9 @@ public class FishlampComm implements IFrameParserFactory{
 				@Override
 				public void frameArrived(Object frame) {
 						System.out.println("Frame: "+frame);
+						for(IFrameListener fl : listeners){
+							fl.frameArrived(frame);
+						}
 				}
 			});
              Thread t = new Thread(parser);

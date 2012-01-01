@@ -11,9 +11,11 @@ import RTE.SecondProvider;
  * Internal clock is 4MHz, CPUDIV is 4 => CLK is 1MHz
  * One sec is 1.000.000 CPU ticks
  * One timer tick is 64 CPU ticks
- * => one sec is 15625 timer ticks 
+ * => one sec is 15625 timer ticks
+ * 
+ * After calibration, recalculated: 15672,743055556 
  */
-const uint8 ONE_SECOND = 15625;
+const uint8 ONE_SECOND = 15673;//15625;
 
 /**
  * Timer is set to 0xFFFF-ONE_SECOND to cause the timer

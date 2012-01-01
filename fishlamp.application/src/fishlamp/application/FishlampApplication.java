@@ -34,6 +34,7 @@ import gnu.io.UnsupportedCommOperationException;
 public class FishlampApplication implements IApplication {
 
 	FishlampComm comm = null;
+	private Label calib;
 	
 	/* (non-Javadoc)
 	 * @see org.eclipse.equinox.app.IApplication#start(org.eclipse.equinox.app.IApplicationContext)
@@ -103,6 +104,24 @@ public class FishlampApplication implements IApplication {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				sendTime(18,59,58);
+			}
+		});
+		
+		Button startCalib = new Button(shell, SWT.PUSH);
+		startCalib.setText("Start calibration");
+		
+		calib = new Label(shell, SWT.NONE);
+		calib.setText("No calibration");
+		calib.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
+		
+		startCalib.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				sendTime(0,0,0);
+				CalibrationThread ct = new CalibrationThread(calib) {
+				};
+				comm.addListener(ct);
+				ct.start();
 			}
 		});
 		
