@@ -13,5 +13,17 @@
          </run>
       </application>
    </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="fishlamp.application.id1"
+            name="Fishlamp desktop application">
+         <property
+               name="appName"
+               value="Fishlamp desktop application">
+         </property>
+      </product>
+   </extension>
 
 </plugin>
